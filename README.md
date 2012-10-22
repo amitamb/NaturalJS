@@ -47,3 +47,8 @@ More Usage Examples
 
 For more examples visit [natural readme](https://github.com/NaturalNode/natural/blob/master/README.md)
 
+
+Limitations
+-----------
+
+It doesn't yet support [Classifiers](https://github.com/NaturalNode/natural#classifiers) and [Wordnet](https://github.com/NaturalNode/natural#wordnet).
