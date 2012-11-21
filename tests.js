@@ -119,7 +119,8 @@ test(  "testing Trigrams", function() {
 
 });
 test(  "testing arbitrary n-grams", function() { 
-
+   var Ngrams = natural.NGrams;
+   deepEqual(Ngrams.ngrams('this is a test for n-grams',4),([["this","is","a","test"],["is","a","test","for"],["a","test","for","n"],["test","for","n","grams"]]),"Expecting to be equal");
 });
 test(  "testing tfidf", function() { 
 
