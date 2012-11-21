@@ -1,4 +1,3 @@
-
 // would like to know about grouping tests within QUnit ...
 test( "a basic test example", function() {
   var value = "hello";
@@ -7,17 +6,22 @@ test( "a basic test example", function() {
 
 test(  "testing WordTokenizer", function() { 
   tokenizer = new natural.WordTokenizer();
-  var result = tokenizer.tokenize("your dog has flees")
-  deepEqual( result, [ 'your', 'dog', 'has', 'flees'], "We expect value to be tokenized" );
+  var result = tokenizer.tokenize("your dog has fleas")
+  deepEqual( result, [ 'your', 'dog', 'has', 'fleas'], "We expect value to be tokenized" );
 });
+
 test(  "testing TreebankWordTokenizer", function() { 
   tokenizer = new natural.TreebankWordTokenizer();
-  var result = tokenizer.tokenize("my dog hasn't any flees.")
-  deepEqual( result, [ 'my', 'dog', 'has', 'n\'t', 'any', 'flees', '.' ], "We expect value to be tokenized" );
+  var result = tokenizer.tokenize("my dog hasn't any fleas.")
+  deepEqual( result, [ 'my', 'dog', 'has', 'n\'t', 'any', 'fleas', '.' ], "We expect value to be tokenized" );
 });
+
 test(  "testing RegExpWordTokenizer", function() { 
-  
+  tokenizer = new natural.RegExpWordTokenizer();
+  var result = tokenizer.tokenize("my-fleas-don't-have-any-dog.");
+  deepEqual( result, [ 'my', 'fleas', 'don't', 'have', 'any', 'dog.'], "We expect value to be tokenized");
 });
+
 test(  "testing WordPunctTokenizer", function() { 
   
 });
