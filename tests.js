@@ -17,7 +17,7 @@ test(  "testing TreebankWordTokenizer", function() {
 });
 
 test(  "testing RegexpTokenizer", function() { 
-  tokenizer = new natural.RegExpWordTokenizer({pattern: /\-/});
+  tokenizer = new natural.RegexpWordTokenizer({pattern: /\-/});
   var result = tokenizer.tokenize("my-fleas-dont-have-any-dog.");
   deepEqual( result, [ 'my', 'fleas', 'dont', 'have', 'any', 'dog.'], "We expect value to be tokenized");
 });
