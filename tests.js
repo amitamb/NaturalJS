@@ -7,19 +7,21 @@ test( "a basic test example", function() {
 
 test(  "testing WordTokenizer", function() { 
   tokenizer = new natural.WordTokenizer();
-  var result = tokenizer.tokenize("your dog has flees")
+  var result = tokenizer.tokenize("your dog has flees");
   deepEqual( result, [ 'your', 'dog', 'has', 'flees'], "We expect value to be tokenized" );
 });
 test(  "testing TreebankWordTokenizer", function() { 
   tokenizer = new natural.TreebankWordTokenizer();
-  var result = tokenizer.tokenize("my dog hasn't any flees.")
+  var result = tokenizer.tokenize("my dog hasn't any flees.");
   deepEqual( result, [ 'my', 'dog', 'has', 'n\'t', 'any', 'flees', '.' ], "We expect value to be tokenized" );
 });
 test(  "testing RegExpWordTokenizer", function() { 
   
 });
 test(  "testing WordPunctTokenizer", function() { 
-  
+  tokenizer = new natural.WordPunctTokenizer();
+  var result = tokenizer.tokenize("my dog hasn't any flees.");
+  deepEqual( result, [ 'my', 'dog', 'hasn', '\'', 't', 'any', 'flees',  '.' ], "We expect value to be tokenised" );
 });
 test(  "testing JaroWinklerDistance", function() { 
   
