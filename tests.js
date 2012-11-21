@@ -119,7 +119,7 @@ test(  "testing Trigrams", function() {
 
 });
 test(  "testing arbitrary n-grams", function() { 
-
+   var Ngrams = natural.NGrams;
 });
 test(  "testing tfidf", function() { 
 
