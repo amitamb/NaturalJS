@@ -16,7 +16,9 @@ test(  "testing TreebankWordTokenizer", function() {
   deepEqual( result, [ 'my', 'dog', 'has', 'n\'t', 'any', 'flees', '.' ], "We expect value to be tokenized" );
 });
 test(  "testing RegExpWordTokenizer", function() { 
-  
+  tokenizer = new natural.RegexpTokenizer({pattern: /\-/});
+  var result = tokenizer.tokenize("flee-dog")
+  deepEqual( result, [ 'flee', 'dog' ], "We expect value to be tokenized" );
 });
 test(  "testing WordPunctTokenizer", function() { 
   
@@ -46,7 +48,16 @@ test(  "testing Lancaster stemmer", function() {
   
 });
 test(  "testing Bayes Classifier", function() { 
-  
+  var classifier = new natural.BayesClassifier();
+  classifier.addDocument('i am long qqqq', 'buy');
+  classifier.addDocument('buy the q\'s', 'buy');
+  classifier.addDocument('short gold', 'sell');
+  classifier.addDocument('sell gold', 'sell');
+
+  classifier.train();
+  var result = classifier.classify('i am short silver');
+  equal( result, 'sell', "We expect value to be 'sell'" );
+
 });
 test(  "testing Bayes Classifier on arrays", function() { 
   
@@ -127,5 +138,15 @@ test(  "testing tfidf", function() {
 test(  "testing wordnet", function() { 
 
 });
+test(  "testing Parts of Speech Encoding", function() { 
+ // this ia apparently not implemented yet
+});
+test(  "testing sentence analysis", function() { 
+ // this ia apparently not implemented yet
+ // although some portion of a sentence analysis system appears
+ // to have been pulled across from some other library:
+ // ttp://www.writingcentre.uottawa.ca/hypergrammar/sntpurps.html
+});
+
 
 
