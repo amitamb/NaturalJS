@@ -50,6 +50,7 @@ test(  "testing Lancaster stemmer", function() {
   
 });
 test(  "testing Bayes Classifier", function() { 
+  
   var classifier = new natural.BayesClassifier();
   classifier.addDocument('i am long qqqq', 'buy');
   classifier.addDocument('buy the q\'s', 'buy');
