@@ -33,6 +33,7 @@ test(  "testing JaroWinklerDistance", function() {
 });
 test(  "testing LevenshteinDistance", function() { 
   equal(natural.LevenshteinDistance("ones","onez"),1);
+  equal(natural.LevenshteinDistance("ones","oness"),1);
   equal(natural.LevenshteinDistance('one', 'one'),0);
 });
 test(  "testing modified LevenshteinDistance", function() { 
