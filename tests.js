@@ -44,7 +44,18 @@ test(  "testing Dice co-efficient", function() {
 });
 test(  "testing Porter Stemmer", function() { 
   
+  stemmer = natural.PorterStemmer;
+ 
+
+  equal(stemmer.stem('stems'),'stem')
+ 
+  equal(stemmer.stem('stemming'),'stem')
+
+  equal(stemmer.stem('stemmed'),'stem')
+
+  equal(stemmer.stem('stem'),'stem')
 });
+
 test(  "testing Porter Stemmer in Russian", function() { 
   
 });
