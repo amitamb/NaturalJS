@@ -28,11 +28,12 @@ test(  "testing WordPunctTokenizer", function() {
   deepEqual( result, [ 'my', 'dog', 'hasn', '\'', 't', 'any', 'flees',  '.' ], "We expect value to be tokenised" );
 });
 test(  "testing JaroWinklerDistance", function() { 
-  equal(natural.JaroWinklerDistance("dixon","dicksonx"),0.7466666666666666);
+  equal(natural.JaroWinklerDistance("dixon","dicksonx"),0.8133333333333332);
   equal(natural.JaroWinklerDistance('not', 'same'),0);
 });
 test(  "testing LevenshteinDistance", function() { 
   equal(natural.LevenshteinDistance("ones","onez"),1);
+  equal(natural.LevenshteinDistance("ones","oness"),1);
   equal(natural.LevenshteinDistance('one', 'one'),0);
 });
 test(  "testing modified LevenshteinDistance", function() { 
@@ -43,7 +44,18 @@ test(  "testing Dice co-efficient", function() {
 });
 test(  "testing Porter Stemmer", function() { 
   
+  stemmer = natural.PorterStemmer;
+ 
+
+  equal(stemmer.stem('stems'),'stem')
+ 
+  equal(stemmer.stem('stemming'),'stem')
+
+  equal(stemmer.stem('stemmed'),'stem')
+
+  equal(stemmer.stem('stem'),'stem')
 });
+
 test(  "testing Porter Stemmer in Russian", function() { 
   
 });
