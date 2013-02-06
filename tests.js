@@ -28,7 +28,7 @@ test(  "testing WordPunctTokenizer", function() {
   deepEqual( result, [ 'my', 'dog', 'hasn', '\'', 't', 'any', 'flees',  '.' ], "We expect value to be tokenised" );
 });
 test(  "testing JaroWinklerDistance", function() { 
-  equal(natural.JaroWinklerDistance("dixon","dicksonx"),0.7466666666666666);
+  equal(natural.JaroWinklerDistance("dixon","dicksonx"),0.8133333333333332);
   equal(natural.JaroWinklerDistance('not', 'same'),0);
 });
 test(  "testing LevenshteinDistance", function() { 
