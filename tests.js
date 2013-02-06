@@ -143,10 +143,14 @@ test(  "testing Present Tense Verbs attach pluralize", function() {
 
 });
 test(  "testing Bigrams", function() { 
-
+  var NGrams = natural.NGrams;
+  var result = NGrams.bigrams("this is a test");
+  deepEqual(result, [["this", "is"], ["is", "a"], ["a", "test"]], "We expect to be equal");
 });
 test(  "testing Trigrams", function() { 
-
+  var NGrams = natural.NGrams;
+  var result = NGrams.trigrams("this is a test");
+  deepEqual(result, [["this", "is", "a"], ["is", "a", "test"]], "We expect to be equal");
 });
 test(  "testing arbitrary n-grams", function() { 
    var Ngrams = natural.NGrams;
