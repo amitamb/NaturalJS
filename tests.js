@@ -8,6 +8,11 @@ test( "testing stopwords", function() {
   ok( stopwords.indexOf(word) != -1, "expecting 'the' to be in the stopword list" );
 });
 
+test( "testing removeStopWords", function() {
+  var sentence = "the quick brown fox jumped over the lazy dog";
+  equal( sentence.removeStopWords(), 'quick brown fox jumped lazy dog');
+});
+
 test(  "testing WordTokenizer", function() { 
   tokenizer = new natural.WordTokenizer();
   var result = tokenizer.tokenize("your dog has fleas")
