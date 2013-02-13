@@ -3,6 +3,10 @@ test( "a basic test example", function() {
   var value = "hello";
   equal( value, "hello", "We expect value to be hello" );
 });
+test( "testing stopwords", function() {
+  var word = "the";
+  ok( stopwords.indexOf(word) != -1, "expecting 'the' to be in the stopword list" );
+});
 
 test(  "testing WordTokenizer", function() { 
   tokenizer = new natural.WordTokenizer();
