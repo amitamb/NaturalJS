@@ -143,6 +143,7 @@ test(  "testing Present Tense Verbs attach pluralize", function() {
 
 });
 test(  "testing Bigrams", function() { 
+   deepEqual(natural.NGrams.bigrams("hello there friend"),([["hello","there"],["there","friend"]]),"Expecting to be equal");
 
 });
 test(  "testing Trigrams", function() { 
