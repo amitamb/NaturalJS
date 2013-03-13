@@ -3,6 +3,15 @@ test( "a basic test example", function() {
   var value = "hello";
   equal( value, "hello", "We expect value to be hello" );
 });
+test( "testing stopwords", function() {
+  var word = "the";
+  ok( stopwords.indexOf(word) != -1, "expecting 'the' to be in the stopword list" );
+});
+
+test( "testing removeStopWords", function() {
+  var sentence = "the quick brown fox jumped over the lazy dog";
+  equal( sentence.removeStopWords(), 'quick brown fox jumped lazy dog');
+});
 
 test(  "testing WordTokenizer", function() { 
   tokenizer = new natural.WordTokenizer();
@@ -143,11 +152,14 @@ test(  "testing Present Tense Verbs attach pluralize", function() {
 
 });
 test(  "testing Bigrams", function() { 
-   deepEqual(natural.NGrams.bigrams("hello there friend"),([["hello","there"],["there","friend"]]),"Expecting to be equal");
-
+  var NGrams = natural.NGrams;
+  var result = NGrams.bigrams("this is a test");
+  deepEqual(result, [["this", "is"], ["is", "a"], ["a", "test"]], "We expect to be equal");
 });
 test(  "testing Trigrams", function() { 
-
+  var NGrams = natural.NGrams;
+  var result = NGrams.trigrams("this is a test");
+  deepEqual(result, [["this", "is", "a"], ["is", "a", "test"]], "We expect to be equal");
 });
 test(  "testing arbitrary n-grams", function() { 
    var Ngrams = natural.NGrams;
